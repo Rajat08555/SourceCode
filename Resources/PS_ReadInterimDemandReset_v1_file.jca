@@ -1,0 +1,16 @@
+<adapter-config name="PS_ReadInterimDemandReset_v1" adapter="file" wsdlLocation="../Wsdl/PS_ReadInterimDemandReset_v1.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIincludeWildcard="*.csv" location="eis/HAFileAdapter"/>
+  <endpoint-activation portType="Read_ptt" operation="Read">
+    <activation-spec className="oracle.tip.adapter.file.inbound.FileActivationSpec">
+      <property name="PhysicalDirectory" value="/u08nfs/soa/osb/ami/cis/hes_interim_demandreset/toBeProcessed"/>
+      <property name="UseHeaders" value="false"/>
+      <property name="MinimumAge" value="60"/>
+      <property name="Recursive" value="false"/>
+      <property name="PollingFrequency" value="60"/>
+      <property name="DeleteFile" value="true"/>
+      <property name="IncludeFiles" value=".*\.csv"/>
+    </activation-spec>
+  </endpoint-activation>
+
+</adapter-config>

@@ -1,0 +1,21 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:notification-v1="http://services.NSPI.com/enterprise/service/ErrorHandlerLogger/v1" version="1.0" targetNamespace="http://services.NSPI.com/enterprise/service/ErrorHandlerLogger/v1">
+<element name="Notification" type="notification-v1:NotificationType"/>
+<complexType name="NotificationType">
+<sequence>
+<element name="NotificationCode" type="string"/>
+<element name="NotificationDetail" type="string"/>
+<element name="InterfaceName" type="string"/>
+<element name="EntityId" type="string"/>
+<element name="InputQueueOrTopic" type="string" minOccurs="1"/>
+<element name="Type" type="string"/>
+<element name="MessageId" type="string"/>
+<element name="OriginalAppMsgPayload">
+<complexType>
+<sequence>
+<any processContents="skip"/>
+</sequence>
+</complexType>
+</element>
+</sequence>
+</complexType>
+</schema>

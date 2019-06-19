@@ -1,0 +1,708 @@
+<wsdl:definitions targetNamespace="http://www.itron.com/ami/2008/10/data" name="DataService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.itron.com/ami/2008/10/data" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:i0="http://tempuri.org/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import location="CM.wsdl" namespace="http://tempuri.org/"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.itron.com/ami/2008/10/data/Imports">
+      <xsd:import namespace="http://www.itron.com/ami/2008/10/data" schemaLocation="../Schema/www.itron.com.ami.2008.10.data.xsd"/>
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="../Schema/schemas.microsoft.com.2003.10.Serialization.xsd"/>
+      <xsd:import namespace="http://www.itron.com/ami/2008/10/common" schemaLocation="../Schema/www.itron.com.ami.2008.10.common.xsd"/>
+      <xsd:import namespace="http://www.itron.com/ami/2008/10/security" schemaLocation="../Schema/www.itron.com.ami.2008.10.security.xsd"/>
+      <xsd:import namespace="http://www.itron.com/ami/2008/10/events" schemaLocation="../Schema/www.itron.com.ami.2008.10.events.xsd"/>
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" schemaLocation="../Schema/schemas.microsoft.com.2003.10.Serialization.Arrays.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="DataService_InteractiveReadByEndpoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:InteractiveReadByEndpoint"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InteractiveReadByEndpoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InteractiveReadByEndpointResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InteractiveReadByEndpoint_ArgumentFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ArgumentFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InteractiveReadByEndpoint_EndpointNotFoundFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:EndpointNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InteractiveReadByEndpoint_EndpointNotRegisteredFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:EndpointNotRegisteredFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InteractiveReadByEndpoint_InvalidUriFormatFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:InvalidUriFormatFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InteractiveReadByEndpoint_InvalidDateTimeRangeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:InvalidDateTimeRangeFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InteractiveReadByEndpoint_TooManyConcurrentRequestsFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TooManyConcurrentRequestsFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InteractiveReadByEndpoint_OperationFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InteractiveReadByEndpoint_SecurityFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SecurityFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInteractiveReadByEndpointResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInteractiveReadByEndpointResult"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInteractiveReadByEndpointResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInteractiveReadByEndpointResultResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInteractiveReadByEndpointResult_ArgumentFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ArgumentFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInteractiveReadByEndpointResult_RequestNotFinishedFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RequestNotFinishedFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInteractiveReadByEndpointResult_RequestNotFoundFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RequestNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInteractiveReadByEndpointResult_OperationFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInteractiveReadByEndpointResult_SecurityFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SecurityFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInteractiveReadByEndpointResult_TooManyConcurrentRequestsFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TooManyConcurrentRequestsFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_ContingencyReadByEndpoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:ContingencyReadByEndpoints"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_ContingencyReadByEndpoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ContingencyReadByEndpointsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_ContingencyReadByEndpoints_ArgumentFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ArgumentFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_ContingencyReadByEndpoints_NoValidTargetsFoundFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:NoValidTargetsFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_ContingencyReadByEndpoints_InvalidUriFormatFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:InvalidUriFormatFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_ContingencyReadByEndpoints_InvalidDateTimeRangeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:InvalidDateTimeRangeFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_ContingencyReadByEndpoints_TooManyConcurrentRequestsFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TooManyConcurrentRequestsFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_ContingencyReadByEndpoints_OperationFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_ContingencyReadByEndpoints_SecurityFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SecurityFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetContingencyReadByEndpointsResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContingencyReadByEndpointsResult"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetContingencyReadByEndpointsResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContingencyReadByEndpointsResultResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetContingencyReadByEndpointsResult_ArgumentFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ArgumentFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetContingencyReadByEndpointsResult_RequestNotFinishedFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RequestNotFinishedFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetContingencyReadByEndpointsResult_RequestNotFoundFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RequestNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetContingencyReadByEndpointsResult_OperationFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetContingencyReadByEndpointsResult_SecurityFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SecurityFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetContingencyReadByEndpointsResult_TooManyConcurrentRequestsFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TooManyConcurrentRequestsFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByEndpoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:InterrogateByEndpoints"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByEndpoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InterrogateByEndpointsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByEndpoints_ArgumentFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ArgumentFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByEndpoints_NoValidTargetsFoundFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:NoValidTargetsFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByEndpoints_InvalidUriFormatFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:InvalidUriFormatFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByEndpoints_InvalidDateTimeRangeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:InvalidDateTimeRangeFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByEndpoints_TooManyConcurrentRequestsFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TooManyConcurrentRequestsFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByEndpoints_OperationFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByEndpoints_SecurityFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SecurityFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByEndpointsResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInterrogateByEndpointsResult"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByEndpointsResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInterrogateByEndpointsResultResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByEndpointsResult_ArgumentFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ArgumentFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByEndpointsResult_RequestNotFinishedFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RequestNotFinishedFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByEndpointsResult_RequestNotFoundFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RequestNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByEndpointsResult_OperationFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByEndpointsResult_SecurityFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SecurityFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByEndpointsResult_TooManyConcurrentRequestsFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TooManyConcurrentRequestsFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:InterrogateByGroup"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InterrogateByGroupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByGroup_ArgumentFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ArgumentFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByGroup_GroupNotFoundFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:GroupNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByGroup_NoValidTargetsFoundFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:NoValidTargetsFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByGroup_InvalidUriFormatFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:InvalidUriFormatFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByGroup_InvalidDateTimeRangeFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:InvalidDateTimeRangeFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByGroup_TooManyConcurrentRequestsFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TooManyConcurrentRequestsFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByGroup_OperationFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_InterrogateByGroup_SecurityFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SecurityFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByGroupResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInterrogateByGroupResult"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByGroupResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInterrogateByGroupResultResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByGroupResult_ArgumentFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ArgumentFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByGroupResult_RequestNotFinishedFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RequestNotFinishedFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByGroupResult_RequestNotFoundFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:RequestNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByGroupResult_OperationFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByGroupResult_SecurityFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SecurityFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_GetInterrogateByGroupResult_TooManyConcurrentRequestsFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TooManyConcurrentRequestsFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SubscribeToEndpointData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeToEndpointData"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SubscribeToEndpointData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeToEndpointDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SubscribeToEndpointData_ArgumentFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ArgumentFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SubscribeToEndpointData_InvalidUriFormatFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:InvalidUriFormatFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SubscribeToEndpointData_TooManySubscribersFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TooManySubscribersFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SubscribeToEndpointData_OperationFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SubscribeToEndpointData_SecurityFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SecurityFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SubscribeToEndpointData_TooManyConcurrentRequestsFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TooManyConcurrentRequestsFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_CancelEndpointDataSubscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelEndpointDataSubscription"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_CancelEndpointDataSubscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelEndpointDataSubscriptionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_CancelEndpointDataSubscription_ArgumentFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ArgumentFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_CancelEndpointDataSubscription_OperationFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_CancelEndpointDataSubscription_SecurityFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SecurityFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_CancelEndpointDataSubscription_TooManyConcurrentRequestsFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TooManyConcurrentRequestsFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SmsWakeup_InputMessage">
+    <wsdl:part name="parameters" element="tns:SmsWakeup"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SmsWakeup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SmsWakeupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SmsWakeup_ArgumentFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ArgumentFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SmsWakeup_OperationFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SmsWakeup_SecurityFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:SecurityFault"/>
+  </wsdl:message>
+  <wsdl:message name="DataService_SmsWakeup_TooManyConcurrentRequestsFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:TooManyConcurrentRequestsFault"/>
+  </wsdl:message>
+  <wsdl:portType name="DataService">
+    <wsdl:operation name="InteractiveReadByEndpoint">
+      <wsdl:input message="tns:DataService_InteractiveReadByEndpoint_InputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InteractiveReadByEndpoint"/>
+      <wsdl:output message="tns:DataService_InteractiveReadByEndpoint_OutputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InteractiveReadByEndpointResponse"/>
+      <wsdl:fault name="ArgumentFault" message="tns:DataService_InteractiveReadByEndpoint_ArgumentFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InteractiveReadByEndpointArgumentFault"/>
+      <wsdl:fault name="EndpointNotFoundFault" message="tns:DataService_InteractiveReadByEndpoint_EndpointNotFoundFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InteractiveReadByEndpointEndpointNotFoundFault"/>
+      <wsdl:fault name="EndpointNotRegisteredFault" message="tns:DataService_InteractiveReadByEndpoint_EndpointNotRegisteredFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InteractiveReadByEndpointEndpointNotRegisteredFault"/>
+      <wsdl:fault name="InvalidUriFormatFault" message="tns:DataService_InteractiveReadByEndpoint_InvalidUriFormatFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InteractiveReadByEndpointInvalidUriFormatFault"/>
+      <wsdl:fault name="InvalidDateTimeRangeFault" message="tns:DataService_InteractiveReadByEndpoint_InvalidDateTimeRangeFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InteractiveReadByEndpointInvalidDateTimeRangeFault"/>
+      <wsdl:fault name="TooManyConcurrentRequestsFault" message="tns:DataService_InteractiveReadByEndpoint_TooManyConcurrentRequestsFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InteractiveReadByEndpointTooManyConcurrentRequestsFault"/>
+      <wsdl:fault name="OperationFault" message="tns:DataService_InteractiveReadByEndpoint_OperationFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InteractiveReadByEndpointOperationFault"/>
+      <wsdl:fault name="SecurityFault" message="tns:DataService_InteractiveReadByEndpoint_SecurityFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InteractiveReadByEndpointSecurityFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetInteractiveReadByEndpointResult">
+      <wsdl:input message="tns:DataService_GetInteractiveReadByEndpointResult_InputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInteractiveReadByEndpointResult"/>
+      <wsdl:output message="tns:DataService_GetInteractiveReadByEndpointResult_OutputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInteractiveReadByEndpointResultResponse"/>
+      <wsdl:fault name="ArgumentFault" message="tns:DataService_GetInteractiveReadByEndpointResult_ArgumentFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInteractiveReadByEndpointResultArgumentFault"/>
+      <wsdl:fault name="RequestNotFinishedFault" message="tns:DataService_GetInteractiveReadByEndpointResult_RequestNotFinishedFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInteractiveReadByEndpointResultRequestNotFinishedFault"/>
+      <wsdl:fault name="RequestNotFoundFault" message="tns:DataService_GetInteractiveReadByEndpointResult_RequestNotFoundFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInteractiveReadByEndpointResultRequestNotFoundFault"/>
+      <wsdl:fault name="OperationFault" message="tns:DataService_GetInteractiveReadByEndpointResult_OperationFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInteractiveReadByEndpointResultOperationFault"/>
+      <wsdl:fault name="SecurityFault" message="tns:DataService_GetInteractiveReadByEndpointResult_SecurityFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInteractiveReadByEndpointResultSecurityFault"/>
+      <wsdl:fault name="TooManyConcurrentRequestsFault" message="tns:DataService_GetInteractiveReadByEndpointResult_TooManyConcurrentRequestsFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInteractiveReadByEndpointResultTooManyConcurrentRequestsFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ContingencyReadByEndpoints">
+      <wsdl:input message="tns:DataService_ContingencyReadByEndpoints_InputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/ContingencyReadByEndpoints"/>
+      <wsdl:output message="tns:DataService_ContingencyReadByEndpoints_OutputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/ContingencyReadByEndpointsResponse"/>
+      <wsdl:fault name="ArgumentFault" message="tns:DataService_ContingencyReadByEndpoints_ArgumentFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/ContingencyReadByEndpointsArgumentFault"/>
+      <wsdl:fault name="NoValidTargetsFoundFault" message="tns:DataService_ContingencyReadByEndpoints_NoValidTargetsFoundFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/ContingencyReadByEndpointsNoValidTargetsFoundFault"/>
+      <wsdl:fault name="InvalidUriFormatFault" message="tns:DataService_ContingencyReadByEndpoints_InvalidUriFormatFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/ContingencyReadByEndpointsInvalidUriFormatFault"/>
+      <wsdl:fault name="InvalidDateTimeRangeFault" message="tns:DataService_ContingencyReadByEndpoints_InvalidDateTimeRangeFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/ContingencyReadByEndpointsInvalidDateTimeRangeFault"/>
+      <wsdl:fault name="TooManyConcurrentRequestsFault" message="tns:DataService_ContingencyReadByEndpoints_TooManyConcurrentRequestsFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/ContingencyReadByEndpointsTooManyConcurrentRequestsFault"/>
+      <wsdl:fault name="OperationFault" message="tns:DataService_ContingencyReadByEndpoints_OperationFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/ContingencyReadByEndpointsOperationFault"/>
+      <wsdl:fault name="SecurityFault" message="tns:DataService_ContingencyReadByEndpoints_SecurityFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/ContingencyReadByEndpointsSecurityFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetContingencyReadByEndpointsResult">
+      <wsdl:input message="tns:DataService_GetContingencyReadByEndpointsResult_InputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetContingencyReadByEndpointsResult"/>
+      <wsdl:output message="tns:DataService_GetContingencyReadByEndpointsResult_OutputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetContingencyReadByEndpointsResultResponse"/>
+      <wsdl:fault name="ArgumentFault" message="tns:DataService_GetContingencyReadByEndpointsResult_ArgumentFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetContingencyReadByEndpointsResultArgumentFault"/>
+      <wsdl:fault name="RequestNotFinishedFault" message="tns:DataService_GetContingencyReadByEndpointsResult_RequestNotFinishedFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetContingencyReadByEndpointsResultRequestNotFinishedFault"/>
+      <wsdl:fault name="RequestNotFoundFault" message="tns:DataService_GetContingencyReadByEndpointsResult_RequestNotFoundFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetContingencyReadByEndpointsResultRequestNotFoundFault"/>
+      <wsdl:fault name="OperationFault" message="tns:DataService_GetContingencyReadByEndpointsResult_OperationFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetContingencyReadByEndpointsResultOperationFault"/>
+      <wsdl:fault name="SecurityFault" message="tns:DataService_GetContingencyReadByEndpointsResult_SecurityFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetContingencyReadByEndpointsResultSecurityFault"/>
+      <wsdl:fault name="TooManyConcurrentRequestsFault" message="tns:DataService_GetContingencyReadByEndpointsResult_TooManyConcurrentRequestsFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetContingencyReadByEndpointsResultTooManyConcurrentRequestsFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="InterrogateByEndpoints">
+      <wsdl:input message="tns:DataService_InterrogateByEndpoints_InputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByEndpoints"/>
+      <wsdl:output message="tns:DataService_InterrogateByEndpoints_OutputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByEndpointsResponse"/>
+      <wsdl:fault name="ArgumentFault" message="tns:DataService_InterrogateByEndpoints_ArgumentFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByEndpointsArgumentFault"/>
+      <wsdl:fault name="NoValidTargetsFoundFault" message="tns:DataService_InterrogateByEndpoints_NoValidTargetsFoundFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByEndpointsNoValidTargetsFoundFault"/>
+      <wsdl:fault name="InvalidUriFormatFault" message="tns:DataService_InterrogateByEndpoints_InvalidUriFormatFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByEndpointsInvalidUriFormatFault"/>
+      <wsdl:fault name="InvalidDateTimeRangeFault" message="tns:DataService_InterrogateByEndpoints_InvalidDateTimeRangeFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByEndpointsInvalidDateTimeRangeFault"/>
+      <wsdl:fault name="TooManyConcurrentRequestsFault" message="tns:DataService_InterrogateByEndpoints_TooManyConcurrentRequestsFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByEndpointsTooManyConcurrentRequestsFault"/>
+      <wsdl:fault name="OperationFault" message="tns:DataService_InterrogateByEndpoints_OperationFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByEndpointsOperationFault"/>
+      <wsdl:fault name="SecurityFault" message="tns:DataService_InterrogateByEndpoints_SecurityFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByEndpointsSecurityFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterrogateByEndpointsResult">
+      <wsdl:input message="tns:DataService_GetInterrogateByEndpointsResult_InputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByEndpointsResult"/>
+      <wsdl:output message="tns:DataService_GetInterrogateByEndpointsResult_OutputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByEndpointsResultResponse"/>
+      <wsdl:fault name="ArgumentFault" message="tns:DataService_GetInterrogateByEndpointsResult_ArgumentFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByEndpointsResultArgumentFault"/>
+      <wsdl:fault name="RequestNotFinishedFault" message="tns:DataService_GetInterrogateByEndpointsResult_RequestNotFinishedFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByEndpointsResultRequestNotFinishedFault"/>
+      <wsdl:fault name="RequestNotFoundFault" message="tns:DataService_GetInterrogateByEndpointsResult_RequestNotFoundFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByEndpointsResultRequestNotFoundFault"/>
+      <wsdl:fault name="OperationFault" message="tns:DataService_GetInterrogateByEndpointsResult_OperationFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByEndpointsResultOperationFault"/>
+      <wsdl:fault name="SecurityFault" message="tns:DataService_GetInterrogateByEndpointsResult_SecurityFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByEndpointsResultSecurityFault"/>
+      <wsdl:fault name="TooManyConcurrentRequestsFault" message="tns:DataService_GetInterrogateByEndpointsResult_TooManyConcurrentRequestsFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByEndpointsResultTooManyConcurrentRequestsFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="InterrogateByGroup">
+      <wsdl:input message="tns:DataService_InterrogateByGroup_InputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByGroup"/>
+      <wsdl:output message="tns:DataService_InterrogateByGroup_OutputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByGroupResponse"/>
+      <wsdl:fault name="ArgumentFault" message="tns:DataService_InterrogateByGroup_ArgumentFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByGroupArgumentFault"/>
+      <wsdl:fault name="GroupNotFoundFault" message="tns:DataService_InterrogateByGroup_GroupNotFoundFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByGroupGroupNotFoundFault"/>
+      <wsdl:fault name="NoValidTargetsFoundFault" message="tns:DataService_InterrogateByGroup_NoValidTargetsFoundFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByGroupNoValidTargetsFoundFault"/>
+      <wsdl:fault name="InvalidUriFormatFault" message="tns:DataService_InterrogateByGroup_InvalidUriFormatFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByGroupInvalidUriFormatFault"/>
+      <wsdl:fault name="InvalidDateTimeRangeFault" message="tns:DataService_InterrogateByGroup_InvalidDateTimeRangeFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByGroupInvalidDateTimeRangeFault"/>
+      <wsdl:fault name="TooManyConcurrentRequestsFault" message="tns:DataService_InterrogateByGroup_TooManyConcurrentRequestsFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByGroupTooManyConcurrentRequestsFault"/>
+      <wsdl:fault name="OperationFault" message="tns:DataService_InterrogateByGroup_OperationFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByGroupOperationFault"/>
+      <wsdl:fault name="SecurityFault" message="tns:DataService_InterrogateByGroup_SecurityFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByGroupSecurityFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterrogateByGroupResult">
+      <wsdl:input message="tns:DataService_GetInterrogateByGroupResult_InputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByGroupResult"/>
+      <wsdl:output message="tns:DataService_GetInterrogateByGroupResult_OutputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByGroupResultResponse"/>
+      <wsdl:fault name="ArgumentFault" message="tns:DataService_GetInterrogateByGroupResult_ArgumentFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByGroupResultArgumentFault"/>
+      <wsdl:fault name="RequestNotFinishedFault" message="tns:DataService_GetInterrogateByGroupResult_RequestNotFinishedFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByGroupResultRequestNotFinishedFault"/>
+      <wsdl:fault name="RequestNotFoundFault" message="tns:DataService_GetInterrogateByGroupResult_RequestNotFoundFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByGroupResultRequestNotFoundFault"/>
+      <wsdl:fault name="OperationFault" message="tns:DataService_GetInterrogateByGroupResult_OperationFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByGroupResultOperationFault"/>
+      <wsdl:fault name="SecurityFault" message="tns:DataService_GetInterrogateByGroupResult_SecurityFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByGroupResultSecurityFault"/>
+      <wsdl:fault name="TooManyConcurrentRequestsFault" message="tns:DataService_GetInterrogateByGroupResult_TooManyConcurrentRequestsFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByGroupResultTooManyConcurrentRequestsFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeToEndpointData">
+      <wsdl:input message="tns:DataService_SubscribeToEndpointData_InputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SubscribeToEndpointData"/>
+      <wsdl:output message="tns:DataService_SubscribeToEndpointData_OutputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SubscribeToEndpointDataResponse"/>
+      <wsdl:fault name="ArgumentFault" message="tns:DataService_SubscribeToEndpointData_ArgumentFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SubscribeToEndpointDataArgumentFault"/>
+      <wsdl:fault name="InvalidUriFormatFault" message="tns:DataService_SubscribeToEndpointData_InvalidUriFormatFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SubscribeToEndpointDataInvalidUriFormatFault"/>
+      <wsdl:fault name="TooManySubscribersFault" message="tns:DataService_SubscribeToEndpointData_TooManySubscribersFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SubscribeToEndpointDataTooManySubscribersFault"/>
+      <wsdl:fault name="OperationFault" message="tns:DataService_SubscribeToEndpointData_OperationFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SubscribeToEndpointDataOperationFault"/>
+      <wsdl:fault name="SecurityFault" message="tns:DataService_SubscribeToEndpointData_SecurityFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SubscribeToEndpointDataSecurityFault"/>
+      <wsdl:fault name="TooManyConcurrentRequestsFault" message="tns:DataService_SubscribeToEndpointData_TooManyConcurrentRequestsFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SubscribeToEndpointDataTooManyConcurrentRequestsFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="CancelEndpointDataSubscription">
+      <wsdl:input message="tns:DataService_CancelEndpointDataSubscription_InputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/CancelEndpointDataSubscription"/>
+      <wsdl:output message="tns:DataService_CancelEndpointDataSubscription_OutputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/CancelEndpointDataSubscriptionResponse"/>
+      <wsdl:fault name="ArgumentFault" message="tns:DataService_CancelEndpointDataSubscription_ArgumentFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/CancelEndpointDataSubscriptionArgumentFault"/>
+      <wsdl:fault name="OperationFault" message="tns:DataService_CancelEndpointDataSubscription_OperationFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/CancelEndpointDataSubscriptionOperationFault"/>
+      <wsdl:fault name="SecurityFault" message="tns:DataService_CancelEndpointDataSubscription_SecurityFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/CancelEndpointDataSubscriptionSecurityFault"/>
+      <wsdl:fault name="TooManyConcurrentRequestsFault" message="tns:DataService_CancelEndpointDataSubscription_TooManyConcurrentRequestsFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/CancelEndpointDataSubscriptionTooManyConcurrentRequestsFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="SmsWakeup">
+      <wsdl:input message="tns:DataService_SmsWakeup_InputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SmsWakeup"/>
+      <wsdl:output message="tns:DataService_SmsWakeup_OutputMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SmsWakeupResponse"/>
+      <wsdl:fault name="ArgumentFault" message="tns:DataService_SmsWakeup_ArgumentFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SmsWakeupArgumentFault"/>
+      <wsdl:fault name="OperationFault" message="tns:DataService_SmsWakeup_OperationFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SmsWakeupOperationFault"/>
+      <wsdl:fault name="SecurityFault" message="tns:DataService_SmsWakeup_SecurityFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SmsWakeupSecurityFault"/>
+      <wsdl:fault name="TooManyConcurrentRequestsFault" message="tns:DataService_SmsWakeup_TooManyConcurrentRequestsFault_FaultMessage" wsaw:Action="http://www.itron.com/ami/2008/10/data/DataService/SmsWakeupTooManyConcurrentRequestsFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_DataService" type="i0:DataService">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="InteractiveReadByEndpoint">
+         <soap:operation soapAction="http://www.itron.com/ami/2008/10/data/DataService/InteractiveReadByEndpoint" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ArgumentFault">
+            <soap:fault name="ArgumentFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="EndpointNotFoundFault">
+            <soap:fault name="EndpointNotFoundFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="EndpointNotRegisteredFault">
+            <soap:fault name="EndpointNotRegisteredFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="InvalidUriFormatFault">
+            <soap:fault name="InvalidUriFormatFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="InvalidDateTimeRangeFault">
+            <soap:fault name="InvalidDateTimeRangeFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="TooManyConcurrentRequestsFault">
+            <soap:fault name="TooManyConcurrentRequestsFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="SecurityFault">
+            <soap:fault name="SecurityFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="GetInteractiveReadByEndpointResult">
+         <soap:operation soapAction="http://www.itron.com/ami/2008/10/data/DataService/GetInteractiveReadByEndpointResult" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ArgumentFault">
+            <soap:fault name="ArgumentFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="RequestNotFinishedFault">
+            <soap:fault name="RequestNotFinishedFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="RequestNotFoundFault">
+            <soap:fault name="RequestNotFoundFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="SecurityFault">
+            <soap:fault name="SecurityFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="TooManyConcurrentRequestsFault">
+            <soap:fault name="TooManyConcurrentRequestsFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="ContingencyReadByEndpoints">
+         <soap:operation soapAction="http://www.itron.com/ami/2008/10/data/DataService/ContingencyReadByEndpoints" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ArgumentFault">
+            <soap:fault name="ArgumentFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="NoValidTargetsFoundFault">
+            <soap:fault name="NoValidTargetsFoundFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="InvalidUriFormatFault">
+            <soap:fault name="InvalidUriFormatFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="InvalidDateTimeRangeFault">
+            <soap:fault name="InvalidDateTimeRangeFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="TooManyConcurrentRequestsFault">
+            <soap:fault name="TooManyConcurrentRequestsFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="SecurityFault">
+            <soap:fault name="SecurityFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="GetContingencyReadByEndpointsResult">
+         <soap:operation soapAction="http://www.itron.com/ami/2008/10/data/DataService/GetContingencyReadByEndpointsResult" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ArgumentFault">
+            <soap:fault name="ArgumentFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="RequestNotFinishedFault">
+            <soap:fault name="RequestNotFinishedFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="RequestNotFoundFault">
+            <soap:fault name="RequestNotFoundFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="SecurityFault">
+            <soap:fault name="SecurityFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="TooManyConcurrentRequestsFault">
+            <soap:fault name="TooManyConcurrentRequestsFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="InterrogateByEndpoints">
+         <soap:operation soapAction="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByEndpoints" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ArgumentFault">
+            <soap:fault name="ArgumentFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="NoValidTargetsFoundFault">
+            <soap:fault name="NoValidTargetsFoundFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="InvalidUriFormatFault">
+            <soap:fault name="InvalidUriFormatFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="InvalidDateTimeRangeFault">
+            <soap:fault name="InvalidDateTimeRangeFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="TooManyConcurrentRequestsFault">
+            <soap:fault name="TooManyConcurrentRequestsFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="SecurityFault">
+            <soap:fault name="SecurityFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="GetInterrogateByEndpointsResult">
+         <soap:operation soapAction="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByEndpointsResult" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ArgumentFault">
+            <soap:fault name="ArgumentFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="RequestNotFinishedFault">
+            <soap:fault name="RequestNotFinishedFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="RequestNotFoundFault">
+            <soap:fault name="RequestNotFoundFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="SecurityFault">
+            <soap:fault name="SecurityFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="TooManyConcurrentRequestsFault">
+            <soap:fault name="TooManyConcurrentRequestsFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="InterrogateByGroup">
+         <soap:operation soapAction="http://www.itron.com/ami/2008/10/data/DataService/InterrogateByGroup" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ArgumentFault">
+            <soap:fault name="ArgumentFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="GroupNotFoundFault">
+            <soap:fault name="GroupNotFoundFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="NoValidTargetsFoundFault">
+            <soap:fault name="NoValidTargetsFoundFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="InvalidUriFormatFault">
+            <soap:fault name="InvalidUriFormatFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="InvalidDateTimeRangeFault">
+            <soap:fault name="InvalidDateTimeRangeFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="TooManyConcurrentRequestsFault">
+            <soap:fault name="TooManyConcurrentRequestsFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="SecurityFault">
+            <soap:fault name="SecurityFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="GetInterrogateByGroupResult">
+         <soap:operation soapAction="http://www.itron.com/ami/2008/10/data/DataService/GetInterrogateByGroupResult" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ArgumentFault">
+            <soap:fault name="ArgumentFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="RequestNotFinishedFault">
+            <soap:fault name="RequestNotFinishedFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="RequestNotFoundFault">
+            <soap:fault name="RequestNotFoundFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="SecurityFault">
+            <soap:fault name="SecurityFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="TooManyConcurrentRequestsFault">
+            <soap:fault name="TooManyConcurrentRequestsFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="SubscribeToEndpointData">
+         <soap:operation soapAction="http://www.itron.com/ami/2008/10/data/DataService/SubscribeToEndpointData" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ArgumentFault">
+            <soap:fault name="ArgumentFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="InvalidUriFormatFault">
+            <soap:fault name="InvalidUriFormatFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="TooManySubscribersFault">
+            <soap:fault name="TooManySubscribersFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="SecurityFault">
+            <soap:fault name="SecurityFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="TooManyConcurrentRequestsFault">
+            <soap:fault name="TooManyConcurrentRequestsFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="CancelEndpointDataSubscription">
+         <soap:operation soapAction="http://www.itron.com/ami/2008/10/data/DataService/CancelEndpointDataSubscription" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ArgumentFault">
+            <soap:fault name="ArgumentFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="SecurityFault">
+            <soap:fault name="SecurityFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="TooManyConcurrentRequestsFault">
+            <soap:fault name="TooManyConcurrentRequestsFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="SmsWakeup">
+         <soap:operation soapAction="http://www.itron.com/ami/2008/10/data/DataService/SmsWakeup" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ArgumentFault">
+            <soap:fault name="ArgumentFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="SecurityFault">
+            <soap:fault name="SecurityFault" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="TooManyConcurrentRequestsFault">
+            <soap:fault name="TooManyConcurrentRequestsFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+  <wsdl:service name="DataService">
+    <wsdl:port name="BasicHttpBinding_DataService" binding="i0:BasicHttpBinding_DataService">
+      <soap:address location="http://nspprdsgcm01:8103/ami/2008/10/data"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
