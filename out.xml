@@ -1,0 +1,118 @@
+<ns5:response xmlns:ns5="http://rndc/api/EODStatsAPI">
+    <ns5:concurrentReqDetailsCollection>
+        <ns5:concurrentRequestDetails>
+            <ns5:statusCd>C</ns5:statusCd>
+            <ns5:requestId>22274414</ns5:requestId>
+            <ns5:description>MARKET CUT-OFF</ns5:description>
+            <ns5:startDttm>07:13:50 2018/05/17</ns5:startDttm>
+            <ns5:completionDttm>07:15:14 2018/05/17</ns5:completionDttm>
+            <ns5:completionText>Normal completion</ns5:completionText>
+        </ns5:concurrentRequestDetails>
+        <ns5:concurrentRequestDetails>
+            <ns5:statusCd>C</ns5:statusCd>
+            <ns5:requestId>22274407</ns5:requestId>
+            <ns5:description>REPRICE</ns5:description>
+            <ns5:startDttm>07:06:37 2018/05/17</ns5:startDttm>
+            <ns5:completionDttm>07:33:07 2018/05/17</ns5:completionDttm>
+            <ns5:completionText>Normal Completion</ns5:completionText>
+        </ns5:concurrentRequestDetails>
+        <ns5:concurrentRequestDetails>
+            <ns5:statusCd>C</ns5:statusCd>
+            <ns5:requestId>22274407</ns5:requestId>
+            <ns5:description>BATCH 1 ROUTES RECEIVED</ns5:description>
+            <ns5:startDttm>07:06:37 2018/05/17</ns5:startDttm>
+            <ns5:completionDttm>07:33:07 2018/05/17</ns5:completionDttm>
+            <ns5:completionText>Normal completion</ns5:completionText>
+        </ns5:concurrentRequestDetails>
+        <ns5:concurrentRequestDetails>
+            <ns5:statusCd>C</ns5:statusCd>
+            <ns5:requestId>22274372</ns5:requestId>
+            <ns5:description>E2E SHIPPING PROCESS - BATCH 1</ns5:description>
+            <ns5:startDttm>06:13:44 2018/05/17</ns5:startDttm>
+            <ns5:completionDttm>06:18:44 2018/05/17</ns5:completionDttm>
+            <ns5:completionText>Normal completion</ns5:completionText>
+        </ns5:concurrentRequestDetails>
+        <ns5:concurrentRequestDetails>
+            <ns5:statusCd/>
+            <ns5:requestId/>
+            <ns5:description>BATCH 1 INVOICE PRINTED</ns5:description>
+            <ns5:startDttm>06:18:44 2018/05/17</ns5:startDttm>
+            <ns5:completionDttm/>
+            <ns5:completionText/>
+        </ns5:concurrentRequestDetails>
+        <ns5:concurrentRequestDetails>
+            <ns5:statusCd>C</ns5:statusCd>
+            <ns5:requestId>22274436</ns5:requestId>
+            <ns5:description>E2E SHIPPING PROCESS - BATCH 2</ns5:description>
+            <ns5:startDttm>07:54:26 2018/05/17</ns5:startDttm>
+            <ns5:completionDttm>09:15:07 2018/05/17</ns5:completionDttm>
+            <ns5:completionText>Normal completion</ns5:completionText>
+        </ns5:concurrentRequestDetails>
+        <ns5:concurrentRequestDetails>
+            <ns5:statusCd/>
+            <ns5:requestId/>
+            <ns5:description>BATCH 2 INVOICE PRINTED</ns5:description>
+            <ns5:startDttm>09:15:07 2018/05/17</ns5:startDttm>
+            <ns5:completionDttm/>
+            <ns5:completionText/>
+        </ns5:concurrentRequestDetails>
+        <ns5:concurrentRequestDetails>
+            <ns5:statusCd>C</ns5:statusCd>
+            <ns5:requestId>22274700</ns5:requestId>
+            <ns5:description>E2E SHIPPING PROCESS - BATCH 3</ns5:description>
+            <ns5:startDttm>14:13:14 2018/05/17</ns5:startDttm>
+            <ns5:completionDttm>15:33:51 2018/05/17</ns5:completionDttm>
+            <ns5:completionText>Normal completion</ns5:completionText>
+        </ns5:concurrentRequestDetails>
+        <ns5:concurrentRequestDetails>
+            <ns5:statusCd/>
+            <ns5:requestId/>
+            <ns5:description>BATCH 3 INVOICE PRINTED</ns5:description>
+            <ns5:startDttm>15:33:51 2018/05/17</ns5:startDttm>
+            <ns5:completionDttm/>
+            <ns5:completionText/>
+        </ns5:concurrentRequestDetails>
+        <ns5:concurrentRequestDetails>
+            <ns5:statusCd/>
+            <ns5:requestId/>
+            <ns5:description>E2E PROCESSING TIME</ns5:description>
+            <ns5:startDttm/>
+            <ns5:completionDttm/>
+            <ns5:completionText>Total Time taken was 500 Minutes</ns5:completionText>
+        </ns5:concurrentRequestDetails>
+    </ns5:concurrentReqDetailsCollection>
+    <ns5:e2eDetailsCollection>
+        <ns5:e2eDetails>
+            <ns5:routeNm>Routes Received From RoadNet</ns5:routeNm>
+            <ns5:routeCnt>2</ns5:routeCnt>
+        </ns5:e2eDetails>
+        <ns5:e2eDetails>
+            <ns5:routeNm>Routes Ready For Pick Release</ns5:routeNm>
+            <ns5:routeCnt>2</ns5:routeCnt>
+        </ns5:e2eDetails>
+        <ns5:e2eDetails>
+            <ns5:routeNm>Routes Sent to WMS</ns5:routeNm>
+            <ns5:routeCnt>2</ns5:routeCnt>
+        </ns5:e2eDetails>
+    </ns5:e2eDetailsCollection>
+    <ns5:bottlesByRouteCollection>
+        <ns5:bottlesByRouteDetails>
+            <ns5:routeNbr>ROUTE_NUMBER19</ns5:routeNbr>
+            <ns5:bottlesOracle>20</ns5:bottlesOracle>
+            <ns5:bottlesWms>16</ns5:bottlesWms>
+            <ns5:comment/>
+        </ns5:bottlesByRouteDetails>
+        <ns5:bottlesByRouteDetails>
+            <ns5:routeNbr>ROUTE_NUMBER21</ns5:routeNbr>
+            <ns5:bottlesOracle>22</ns5:bottlesOracle>
+            <ns5:bottlesWms>18</ns5:bottlesWms>
+            <ns5:comment/>
+        </ns5:bottlesByRouteDetails>
+    </ns5:bottlesByRouteCollection>
+    <ns5:e2eTimeDetailsCollection>
+        <ns5:e2eTimeDetails>
+            <ns5:colNm/>
+            <ns5:totalTime/>
+        </ns5:e2eTimeDetails>
+    </ns5:e2eTimeDetailsCollection>
+</ns5:response>
