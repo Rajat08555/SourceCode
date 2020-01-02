@@ -1,0 +1,143 @@
+FORMAT: 1A
+HOST: http://soatstinternal:80/services/SalesReportRESTAPI
+
+# Sales Report API
+
+Sales report API helps the Business Users to track the sales specific details.
+The Report has the details such as Cases/Bottles sold for a particular month, Sales of last year for the same month and the Deviation from last year returned for all the specific months.
+
+## Sales Report [/salesreport]
+
+### Get Sales Data [POST]
+
+The input includes the following attributes:
+
+`Period`      Expected: MTD, QTD, YTD
+
+`Value`       Expected: Year (YYYY)
+
+`Market`      Expected: Three character market code, ex. LOU, ATL, SAV
+
+`EmailReport` Expected: true/false
+
++ Request (application/json)
+
+        {
+            "Period" : "YTD",
+            "Value" : "2018",
+            "Market" : "LOU",
+            "EmailReport" : true
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {  
+            "ResponseRecords":[  
+                {  
+                    "House":"Louisville",
+                    "TotalSalesData":[  
+            {  
+               "MonthDesc":"Jan-2018",
+               "SalesLastYear":"12689520.07",
+               "Bottles":1870615,
+               "Sales":140636085,
+               "DeltaSales":1374088.4299999997,
+               "Cases":160856.433
+            },
+            {  
+               "MonthDesc":"Feb-2018",
+               "SalesLastYear":"14110956.95",
+               "Bottles":2004127,
+               "Sales":1533386463,
+               "DeltaSales":1222907.6800000016,
+               "Cases":174712.793
+            },
+            {  
+               "MonthDesc":"Mar-2018",
+               "SalesLastYear":"19065306.67",
+               "Bottles":2429011,
+               "Sales":189774383,
+               "DeltaSales":-87868.37000000104,
+               "Cases":212397.964
+            },
+            {  
+               "MonthDesc":"Apr-2018",
+               "SalesLastYear":"17840930.41",
+               "Bottles":2503276,
+               "Sales":2064699078,
+               "DeltaSales":2806060.370000001,
+               "Cases":221086.378
+            },
+            {  
+               "MonthDesc":"May-2018",
+               "SalesLastYear":"18995785.38",
+               "Bottles":2676441,
+               "Sales":2140781176,
+               "DeltaSales":2412026.3800000027,
+               "Cases":236358.768
+            },
+            {  
+               "MonthDesc":"Jun-2018",
+               "SalesLastYear":"19044591.24",
+               "Bottles":2433499,
+               "Sales":1964026252,
+               "DeltaSales":595671.2800000012,
+               "Cases":217735.532
+            },
+            {  
+               "MonthDesc":"Jul-2018",
+               "SalesLastYear":"15165014.59",
+               "Bottles":2233439,
+               "Sales":1828004151,
+               "DeltaSales":3115026.920000002,
+               "Cases":199642.209
+            },
+            {  
+               "MonthDesc":"Aug-2018",
+               "SalesLastYear":"9410371.56",
+               "Bottles":2630859,
+               "Sales":2114608289,
+               "DeltaSales":1173571133,
+               "Cases":230983.429
+            },
+            {  
+               "MonthDesc":"Sep-2018",
+               "SalesLastYear":"18134017.3",
+               "Bottles":2154349,
+               "Sales":1777669892,
+               "DeltaSales":-357318.37999999896,
+               "Cases":189391.058
+            },
+            {  
+               "MonthDesc":"Oct-2018",
+               "SalesLastYear":"19994614.04",
+               "Bottles":2652660,
+               "Sales":2372795376,
+               "DeltaSales":3733339.7200000025,
+               "Cases":240366.947
+            },
+            {  
+               "MonthDesc":"Nov-2018",
+               "SalesLastYear":"21556048.07",
+               "Bottles":2751754,
+               "Sales":239028323,
+               "DeltaSales":2346784.2300000004,
+               "Cases":249385.028
+            },
+            {  
+               "MonthDesc":"Dec-2018",
+               "SalesLastYear":"25388584.5",
+               "Bottles":750221,
+               "Sales":6536311.87,
+               "DeltaSales":-1885227263,
+               "Cases":67766.864
+            }
+            ],
+            "TotalCases":2400683.4,
+            "TotalSales":22143989774,
+            "TotalBottles":27090251
+            }
+            ]
+            }
